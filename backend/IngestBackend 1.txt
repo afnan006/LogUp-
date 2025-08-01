@@ -1,0 +1,814 @@
+Ingestion Results for e:\LogUp\backend
+Summary
+Directory: backend
+Files analyzed: 94
+
+Estimated tokens: 5.0k
+
+
+Directory structure:
+└── backend/
+    ├── README.md
+    ├── ca.pem
+    ├── main.py
+    ├── requirements.txt
+    ├── app/
+    │   ├── __init__.py
+    │   ├── __pycache__/
+    │   ├── api/
+    │   │   ├── __init__.py
+    │   │   ├── analytics.py
+    │   │   ├── auth.py
+    │   │   ├── budgets.py
+    │   │   ├── chat.py
+    │   │   ├── dashboard.py
+    │   │   ├── debts.py
+    │   │   ├── friends.py
+    │   │   ├── goals.py
+    │   │   ├── messages.py
+    │   │   ├── notifications.py
+    │   │   ├── permissions.py
+    │   │   ├── receipts.py
+    │   │   ├── savings.py
+    │   │   ├── sms.py
+    │   │   ├── split_expenses.py
+    │   │   ├── subscriptions.py
+    │   │   ├── templates.py
+    │   │   ├── transactions.py
+    │   │   └── widgets.py
+    │   ├── config/
+    │   │   ├── __init__.py
+    │   │   └── settings.py
+    │   ├── db/
+    │   │   ├── __init__.py
+    │   │   ├── database.py
+    │   │   ├── test_db_connection.py
+    │   │   ├── __pycache__/
+    │   │   ├── models/
+    │   │   │   ├── __init__.py
+    │   │   │   ├── budget.py
+    │   │   │   ├── debt.py
+    │   │   │   ├── friend.py
+    │   │   │   ├── goal.py
+    │   │   │   ├── message.py
+    │   │   │   ├── nudge.py
+    │   │   │   ├── permission.py
+    │   │   │   ├── saving.py
+    │   │   │   ├── split_expense.py
+    │   │   │   ├── subscription.py
+    │   │   │   ├── template.py
+    │   │   │   ├── transaction.py
+    │   │   │   ├── user.py
+    │   │   │   └── widget_config.py
+    │   │   └── schemas/
+    │   │       ├── __init__.py
+    │   │       ├── budget.py
+    │   │       ├── debt.py
+    │   │       ├── friend.py
+    │   │       ├── goal.py
+    │   │       ├── message.py
+    │   │       ├── nudge.py
+    │   │       ├── permission.py
+    │   │       ├── saving.py
+    │   │       ├── split_expense.py
+    │   │       ├── subscription.py
+    │   │       ├── template.py
+    │   │       ├── transaction.py
+    │   │       ├── user.py
+    │   │       └── widget_config.py
+    │   ├── middleware/
+    │   │   ├── __init__.py
+    │   │   └── auth.py
+    │   ├── services/
+    │   │   ├── __init__.py
+    │   │   ├── analytics_service.py
+    │   │   ├── auth_service.py
+    │   │   ├── budget_service.py
+    │   │   ├── chat_service.py
+    │   │   ├── debt_service.py
+    │   │   ├── friend_service.py
+    │   │   ├── goal_service.py
+    │   │   ├── message_service.py
+    │   │   ├── notification_service.py
+    │   │   ├── split_service.py
+    │   │   ├── subscription_service.py
+    │   │   └── transaction_service.py
+    │   └── utils/
+    │       ├── __init__.py
+    │       └── helpers.py
+    └── tests/
+        ├── __init__.py
+        ├── test_analytics.py
+        ├── test_auth.py
+        ├── test_budgets.py
+        ├── test_chat.py
+        ├── test_debts.py
+        ├── test_friends.py
+        ├── test_goals.py
+        ├── test_messages.py
+        ├── test_notifications.py
+        ├── test_receipts.py
+        ├── test_savings.py
+        ├── test_sms.py
+        ├── test_split_expenses.py
+        ├── test_subscriptions.py
+        ├── test_templates.py
+        └── test_transactions.py
+
+
+File Contents
+
+===============================================
+File: README.md
+===============================================
+
+
+
+===============================================
+File: ca.pem
+===============================================
+
+-----BEGIN CERTIFICATE-----
+MIIEUDCCArigAwIBAgIUCO+u/6m7BQ+0IK13DE3KPKxxUVYwDQYJKoZIhvcNAQEM
+BQAwQDE+MDwGA1UEAww1MDEzMWMwNTUtMWE1Mi00ZGI3LTg0MmYtYTBmYWU2NWNm
+NDAyIEdFTiAxIFByb2plY3QgQ0EwHhcNMjUwNzMwMTAxMTEwWhcNMzUwNzI4MTAx
+MTEwWjBAMT4wPAYDVQQDDDUwMTMxYzA1NS0xYTUyLTRkYjctODQyZi1hMGZhZTY1
+Y2Y0MDIgR0VOIDEgUHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCC
+AYoCggGBAJKoICvm6A1XcaD+ouLn+1TM40WJOjWJ6E8nhAnzv8VFjrhlAJkPgf3x
+xy52erloS4A0YT+tjCVycSAwMePk+09rKMPzdwOFtL3g0C4AqxxRPNbEGi/Aeidc
+MPQ5Ry05nrzISOm/bD6usx1Wn/lHvMhS1ZIOSz0pStSWllPv3PiOViEuiHk2EJcK
+OT7QGYkG4L3UEwPULL9gArIMxP+fZKliPqzzSjHx7aBhpjZhybXawYpzVfZ5yp+j
+1phO50zXRfO1RmFdGX9e6bjz5YNoNX0xmo7Ka+MIyyEU0TjcogQ+O2W9SQGff7af
+GSjamxJdULtR3WzwPQIc1ucLskGK10sbUzC3qqZgoZB5uty/M+TEKHsVA63BVjQ0
+aPAUw1zD+6RA1Ph95YFCrKR0ROE/0MfLzhLF4wzqBTbsxvYMMU2O+WR/8yoHg6AN
+ENRys1DqtGcnxZk+h24tiGDknN7OZxNdO22AiML4yI1CiiYUE2Sfyhut0Uc42me+
+bl/m7VCgZwIDAQABo0IwQDAdBgNVHQ4EFgQUGJ+lgcBl0l2/mgBSlmO2DiCBcLIw
+EgYDVR0TAQH/BAgwBgEB/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQAD
+ggGBAE3N5hGtLfkFbf92d0hogWRh6MSGkX/E09z+CGIO/+PJLgFXXp5PeRbUiHJB
+oaTNxfW/0HBP6v5aNaVXdGvFTH1Ft1Z+5miTQmKhMc5Ug+e1e1kbqZZam/2cs/Bh
+Zcm0JgkbDOzI/rl49bpeBG+ggd4a1bST6SQlV8oHOdbk4fpwwmOgyCMpDCdOcu2y
+QVaiwFhkCJLusf1KMTkBW/eghTYA6qjj9TKLmBn8Z5zwiBIifXAKDJvG1wiJttzB
+9p1U85u5wWpeSie0Rw3Y/H7ysm48qOXAy33BwHXcJkjxjct6Jdeud+N1ENMHxgIu
+GDfbITNrF5FS9vCZ0ugJqrt6OTXYq7AbVWV6OWYAn7vakmjUvNK7NTxtmu12Chx7
+L050MAgCaoFNOjHqnOSB85OjJKSeOt9b2wgjnDEQqKco3CqhrR5kGAeYF6+s1JM5
+ky/wvDyxNEAB4FItRWWNNQBmucTVwWNKE55T3fiYH12jrWGjwIVGsABLWOofCsof
+qg4R+A==
+-----END CERTIFICATE-----
+
+
+===============================================
+File: main.py
+===============================================
+
+from fastapi import FastAPI
+     from fastapi.middleware.cors import CORSMiddleware
+     from app.db.database import init_db
+
+     app = FastAPI(title="LogUp Backend")
+
+     # CORS for frontend
+     app.add_middleware(
+         CORSMiddleware,
+         allow_origins=["http://localhost:5173"],
+         allow_credentials=True,
+         allow_methods=["*"],
+         allow_headers=["*"],
+     )
+
+     @app.on_event("startup")
+     async def startup_event():
+         init_db()
+
+     @app.get("/")
+     async def root():
+         return {"message": "Welcome to LogUp Backend"}
+
+===============================================
+File: requirements.txt
+===============================================
+
+[Non-text file]
+
+===============================================
+File: app\__init__.py
+===============================================
+
+
+
+
+===============================================
+File: app\api\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\api\analytics.py
+===============================================
+
+
+
+===============================================
+File: app\api\auth.py
+===============================================
+
+
+
+===============================================
+File: app\api\budgets.py
+===============================================
+
+
+
+===============================================
+File: app\api\chat.py
+===============================================
+
+
+
+===============================================
+File: app\api\dashboard.py
+===============================================
+
+
+
+===============================================
+File: app\api\debts.py
+===============================================
+
+
+
+===============================================
+File: app\api\friends.py
+===============================================
+
+
+
+===============================================
+File: app\api\goals.py
+===============================================
+
+
+
+===============================================
+File: app\api\messages.py
+===============================================
+
+
+
+===============================================
+File: app\api\notifications.py
+===============================================
+
+
+
+===============================================
+File: app\api\permissions.py
+===============================================
+
+
+
+===============================================
+File: app\api\receipts.py
+===============================================
+
+
+
+===============================================
+File: app\api\savings.py
+===============================================
+
+
+
+===============================================
+File: app\api\sms.py
+===============================================
+
+
+
+===============================================
+File: app\api\split_expenses.py
+===============================================
+
+
+
+===============================================
+File: app\api\subscriptions.py
+===============================================
+
+
+
+===============================================
+File: app\api\templates.py
+===============================================
+
+
+
+===============================================
+File: app\api\transactions.py
+===============================================
+
+
+
+===============================================
+File: app\api\widgets.py
+===============================================
+
+
+
+===============================================
+File: app\config\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\config\settings.py
+===============================================
+
+
+
+===============================================
+File: app\db\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\db\database.py
+===============================================
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+import os
+
+# Load .env file
+load_dotenv()
+
+# Database configuration
+DATABASE_URL = os.getenv("DATABASE_URL")
+DB_POOL_SIZE = int(os.getenv("DB_POOL_SIZE", 20))
+DB_MAX_OVERFLOW = int(os.getenv("DB_MAX_OVERFLOW", 10))
+DB_ECHO = os.getenv("DB_ECHO", "False").lower() == "true"
+
+# Create SQLAlchemy engine
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=DB_POOL_SIZE,
+    max_overflow=DB_MAX_OVERFLOW,
+    echo=DB_ECHO
+)
+
+# Create session factory
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Base class for models
+Base = declarative_base()
+
+# Dependency for FastAPI
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+# Function to initialize database (create tables)
+def init_db():
+    Base.metadata.create_all(bind=engine)
+
+===============================================
+File: app\db\test_db_connection.py
+===============================================
+
+import os
+import ssl
+import asyncio
+from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy import text  # <-- Important!
+from dotenv import load_dotenv
+
+# Load environment variables from ../../.env
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '../../.env'))
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL and not DATABASE_URL.startswith("postgresql+asyncpg"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+def get_ssl_context():
+    ca_path = os.path.join(os.path.dirname(__file__), '../../ca.pem')
+    if not os.path.exists(ca_path):
+        print(f"❌ CA certificate not found at {ca_path}")
+        print("Please download ca.pem from your Aiven dashboard and place it in the backend directory.")
+        exit(1)
+    ssl_context = ssl.create_default_context(cafile=ca_path)
+    return ssl_context
+
+async def test_connection():
+    print(f"Trying: {DATABASE_URL}")
+    ssl_context = get_ssl_context()
+    engine = create_async_engine(
+        DATABASE_URL or "bad_url",
+        echo=True,
+        connect_args={"ssl": ssl_context}
+    )
+    try:
+        async with engine.begin() as conn:
+            # FIX: wrap SQL string in text()
+            await conn.execute(text("SELECT 1;"))
+        print("✅ Database connection successful!")
+    except SQLAlchemyError as e:
+        print("❌ Database connection failed!")
+        print(repr(e))
+
+if __name__ == "__main__":
+    asyncio.run(test_connection())
+
+
+
+===============================================
+File: app\db\models\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\budget.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\debt.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\friend.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\goal.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\message.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\nudge.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\permission.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\saving.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\split_expense.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\subscription.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\template.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\transaction.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\user.py
+===============================================
+
+
+
+===============================================
+File: app\db\models\widget_config.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\budget.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\debt.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\friend.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\goal.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\message.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\nudge.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\permission.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\saving.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\split_expense.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\subscription.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\template.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\transaction.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\user.py
+===============================================
+
+
+
+===============================================
+File: app\db\schemas\widget_config.py
+===============================================
+
+
+
+===============================================
+File: app\middleware\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\middleware\auth.py
+===============================================
+
+
+
+===============================================
+File: app\services\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\services\analytics_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\auth_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\budget_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\chat_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\debt_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\friend_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\goal_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\message_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\notification_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\split_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\subscription_service.py
+===============================================
+
+
+
+===============================================
+File: app\services\transaction_service.py
+===============================================
+
+
+
+===============================================
+File: app\utils\__init__.py
+===============================================
+
+
+
+===============================================
+File: app\utils\helpers.py
+===============================================
+
+
+
+===============================================
+File: tests\__init__.py
+===============================================
+
+
+
+===============================================
+File: tests\test_analytics.py
+===============================================
+
+
+
+===============================================
+File: tests\test_auth.py
+===============================================
+
+
+
+===============================================
+File: tests\test_budgets.py
+===============================================
+
+
+
+===============================================
+File: tests\test_chat.py
+===============================================
+
+
+
+===============================================
+File: tests\test_debts.py
+===============================================
+
+
+
+===============================================
+File: tests\test_friends.py
+===============================================
+
+
+
+===============================================
+File: tests\test_goals.py
+===============================================
+
+
+
+===============================================
+File: tests\test_messages.py
+===============================================
+
+
+
+===============================================
+File: tests\test_notifications.py
+===============================================
+
+
+
+===============================================
+File: tests\test_receipts.py
+===============================================
+
+
+
+===============================================
+File: tests\test_savings.py
+===============================================
+
+
+
+===============================================
+File: tests\test_sms.py
+===============================================
+
+
+
+===============================================
+File: tests\test_split_expenses.py
+===============================================
+
+
+
+===============================================
+File: tests\test_subscriptions.py
+===============================================
+
+
+
+===============================================
+File: tests\test_templates.py
+===============================================
+
+
+
+===============================================
+File: tests\test_transactions.py
+===============================================
+
+
