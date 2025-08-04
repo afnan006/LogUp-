@@ -1,4 +1,5 @@
-# 💰 LogUp - Intelligent Financial Management Platform
+# 💰 LogUp - Own Your Sh!t frfr
+Intelligent Financial Management Platform
 
 <div align="center">
 
