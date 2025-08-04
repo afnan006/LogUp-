@@ -330,10 +330,13 @@ As the primary developer, I welcome contributions that align with the project's 
 
 ## 📈 Development Stats
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yourusername/logup)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/logup)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/logup)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/logup)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/afnan006/LogUp-)
+![GitHub last commit](https://img.shields.io/github/last-commit/afnan006/LogUp-)
+![GitHub issues](https://img.shields.io/github/issues/afnan006/LogUp-)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/afnan006/LogUp-)
+![GitHub repo size](https://img.shields.io/github/repo-size/afnan006/LogUp-)
+![GitHub top language](https://img.shields.io/github/languages/top/afnan006/LogUp-)
+![GitHub stars](https://img.shields.io/github/stars/afnan006/LogUp-)
 
 ## 📄 License
 
