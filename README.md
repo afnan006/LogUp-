@@ -1,261 +1,356 @@
-LogUp - Personal Finance Management Application
-Overview
-LogUp is a comprehensive personal finance management application designed to empower users with tools to track expenses, manage budgets, split bills with friends, monitor subscriptions, and set financial goals. The application combines a robust backend built with FastAPI and SQLAlchemy with a modern, responsive frontend developed using React, TypeScript, and Tailwind CSS. LogUp aims to provide an intuitive and engaging user experience, integrating AI-driven insights and social features to make financial management seamless and collaborative.
-Features
-Core Functionality
+# 💰 LogUp - Intelligent Financial Management Platform
 
-Expense Tracking: Log and categorize transactions to monitor spending habits.
-Budget Management: Create, update, and track budgets for various categories with customizable periods.
-Debt Management: Record and manage debts owed to or by friends, with status tracking (pending/paid).
-Bill Splitting: Split expenses among friends using equal, percentage-based, or custom amount methods, with automated settlement calculations.
-Subscription Management: Track recurring subscriptions with details like billing cycles, due dates, and status (active/paused/cancelled).
-Financial Goals: Set and monitor savings goals with target amounts and deadlines.
-Social Features: Connect with friends to collaborate on shared expenses and communicate via in-app messaging.
-AI-Driven Insights: Generate personalized financial stories and predictions based on user spending patterns (currently in development).
-Receipt Processing: Upload and process receipts for expense tracking (placeholder for future OCR integration).
-SMS Integration: Send notifications or reminders via SMS (placeholder for future Twilio integration).
-Customizable Widgets: Configure dashboard widgets to display key financial metrics.
-Notifications: Receive nudges and alerts for budget limits, due dates, and financial milestones.
+<div align="center">
 
-Technical Highlights
+![LogUp Banner](https://via.placeholder.com/800x200/1f2937/ffffff?text=LogUp+-+Smart+Financial+Management)
 
-Backend: Built with FastAPI for high-performance API endpoints, using SQLAlchemy for ORM and PostgreSQL for data persistence.
-Frontend: Developed with React and TypeScript, styled with Tailwind CSS for a responsive and modern UI.
-Database: Structured with models for users, transactions, budgets, debts, friends, goals, savings, messages, notifications, permissions, templates, and widget configurations.
-Authentication: Secure user signup and login with bcrypt password hashing.
-CORS Support: Configured to allow seamless communication with the frontend running on http://localhost:5173.
-Modular Architecture: Organized into services, middleware, and utilities for maintainability and scalability.
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-Project Structure
-afnan006-logup-/
-├── backend/
-│   ├── app/
-│   │   ├── api/                    # API endpoints for various features
-│   │   ├── config/                 # Configuration settings
-│   │   ├── db/                     # Database models, schemas, and utilities
-│   │   ├── middleware/             # Authentication middleware
-│   │   ├── services/               # Business logic for various features
-│   │   └── utils/                  # Helper functions
-│   ├── tests/                      # Unit tests for API endpoints
-│   ├── main.py                     # FastAPI application entry point
-│   ├── requirements.txt            # Python dependencies
-│   └── README.md                   # Backend-specific documentation
-├── frontend/
-│   ├── src/
-│   │   ├── components/             # Reusable React components
-│   │   ├── contexts/               # React context for state management
-│   │   ├── lib/                    # Firebase integration
-│   │   └── pages/                  # Page components for different views
-│   ├── index.html                  # HTML entry point
-│   ├── package.json                # Node.js dependencies
-│   ├── tailwind.config.js          # Tailwind CSS configuration
-│   ├── vite.config.ts              # Vite configuration
-│   └── tsconfig.json               # TypeScript configuration
+**Empowering users to take full control of their personal finances with AI-driven insights**
 
-Installation
-Prerequisites
+[🚀 Features](#-features) • [🛠️ Tech Stack](#️-tech-stack) • [📦 Installation](#-installation) • [🔄 Current Development](#-current-development) • [🤝 Contributing](#-contributing)
 
-Backend:
-Python 3.8+
-PostgreSQL
-pip for installing Python dependencies
+</div>
 
+---
 
-Frontend:
-Node.js 16+
-npm or yarn for installing dependencies
+## 📋 Table of Contents
 
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Architecture](#-architecture)
+- [Installation](#-installation)
+- [Current Development](#-current-development)
+- [Project Structure](#-project-structure)
+- [API Documentation](#-api-documentation)
+- [Testing](#-testing)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
 
+## 🎯 Overview
 
-Backend Setup
+LogUp is a sophisticated financial management application designed to revolutionize personal finance management through intelligent automation and AI-driven insights. Built with modern technologies, LogUp provides a comprehensive suite of tools for expense tracking, budget management, debt monitoring, and financial goal setting.
 
-Clone the Repository:
-git clone https://github.com/afnan006/logup.git
+### 🌟 What Makes LogUp Special?
+
+- **AI-Powered Intelligence**: Leveraging RAG (Retrieval-Augmented Generation) models with vector databases
+- **Centralized Chat Interface**: Natural language interaction with your financial data
+- **Smart Automation**: Intelligent categorization and personalized recommendations
+- **Modern Architecture**: Built with FastAPI, React, and cutting-edge technologies
+
+## ✨ Features
+
+### 🏦 Core Financial Management
+- **💳 Expense Tracking** - Record and categorize transactions effortlessly
+- **📊 Budget Management** - Set and monitor spending limits across categories
+- **🎯 Goal Setting** - Create and track personalized financial objectives
+- **💰 Debt Tracking** - Manage lent/borrowed money with friends and family
+- **🤝 Split Expenses** - Simplify shared expenses among participants
+- **📱 Transaction History** - Detailed logs with advanced search and filtering
+
+### 🤖 AI-Powered Features
+- **🧠 Intelligent Chatbot** - Natural language financial assistant
+- **📄 OCR Receipt Scanning** - Extract transaction details from receipts
+- **🔍 Smart Categorization** - AI-driven expense categorization
+- **📈 Personalized Insights** - Data-driven recommendations and analysis
+- **🔔 Smart Notifications** - Intelligent alerts for bills and overspending
+
+### 📊 Analytics & Insights
+- **📈 Spending Patterns** - Detailed analysis of financial behavior
+- **📉 Trend Analysis** - Historical data visualization
+- **🎯 Goal Progress** - Visual tracking of financial objectives
+- **💡 AI Recommendations** - Personalized financial advice
+
+## 🛠️ Tech Stack
+
+### Backend
+```
+🚀 FastAPI          - Modern, fast web framework for building APIs
+🐘 PostgreSQL       - Robust relational database
+🔧 SQLAlchemy       - Python SQL toolkit and ORM
+🔐 OAuth2 + JWT     - Secure authentication system
+🧪 Pytest          - Comprehensive testing framework
+```
+
+### Frontend
+```
+⚛️  React + TypeScript  - Type-safe component-based UI
+🎨 TailwindCSS          - Utility-first CSS framework
+🎭 Framer Motion        - Smooth animations and transitions
+🧭 React Router         - Client-side routing
+🎯 Context API          - State management
+🎪 Lucide React         - Beautiful icon library
+⚡ Vite                 - Lightning-fast build tool
+```
+
+### AI & Data
+```
+🤖 Qdrant             - Vector database for embeddings
+🧠 RAG LLMs           - Retrieval-Augmented Generation models
+🔤 OpenAI/Hugging Face - NLP and language models
+📊 Vector Embeddings   - Semantic search capabilities
+```
+
+## 🏗️ Architecture
+
+```mermaid
+graph TB
+    A[React Frontend] --> B[FastAPI Backend]
+    B --> C[PostgreSQL Database]
+    B --> D[Qdrant Vector DB]
+    B --> E[AI Services]
+    E --> F[RAG LLMs]
+    E --> G[OCR Engine]
+    B --> H[Authentication Service]
+    B --> I[Analytics Engine]
+```
+
+## 📦 Installation
+
+### Prerequisites
+- Python 3.9+
+- Node.js 16+
+- PostgreSQL 13+
+- Git
+
+### Backend Setup
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/logup.git
 cd logup/backend
 
-
-Set Up a Virtual Environment:
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-
-Install Dependencies:
+# Install dependencies
 pip install -r requirements.txt
 
-
-Configure Environment Variables:
-
-Create a .env file in the backend/ directory.
-Add the following variables:DATABASE_URL=postgresql://user:password@localhost:5432/logup_db
-DB_POOL_SIZE=20
-DB_MAX_OVERFLOW=10
-DB_ECHO=False
-
-
-Ensure a ca.pem certificate is present for SSL-secured database connections (if applicable).
-
-
-Initialize the Database:
+# Set up database
 python app/db/create_tables.py
 
-
-Run the Backend:
+# Run the server
 uvicorn main:app --reload
+```
 
-The API will be available at http://localhost:8000.
+### Frontend Setup
+```bash
+# Navigate to frontend directory
+cd ../frontend
 
-
-Frontend Setup
-
-Navigate to the Frontend Directory:
-cd frontend
-
-
-Install Dependencies:
+# Install dependencies
 npm install
 
-
-Run the Development Server:
+# Start development server
 npm run dev
+```
 
-The frontend will be available at http://localhost:5173.
+### Environment Variables
+Create a `.env` file in the backend directory:
+```env
+DATABASE_URL=postgresql://username:password@localhost:5432/logup
+SECRET_KEY=your-secret-key
+QDRANT_URL=http://localhost:6333
+OPENAI_API_KEY=your-openai-key
+```
 
+## 🔄 Current Development
 
-Usage
+### 🧪 Backend Testing Phase
+Currently focused on comprehensive backend testing to ensure:
+- ✅ API endpoint reliability
+- ✅ Database operation integrity
+- ✅ Authentication security
+- ✅ Service layer functionality
+- ✅ Error handling robustness
 
-Sign Up / Log In: Access the application via the frontend and create an account or log in using the /auth/signup or /auth/login endpoints.
-Dashboard: View a summary of expenses, savings, and debts via the /analytics/summary endpoint.
-Manage Finances:
-Add and track transactions, budgets, debts, and savings through their respective pages.
-Split expenses with friends on the SplitExpensePage.
-Monitor subscriptions and their due dates on the SubscriptionsPage.
+### 🤖 AI Services Integration
+Next phase involves implementing AI-powered features:
 
+```python
+# AI Service Architecture
+class ChatService:
+    def __init__(self):
+        self.qdrant_client = QdrantClient()
+        self.llm_model = initialize_rag_model()
+    
+    async def process_query(self, user_query: str):
+        # Vector similarity search
+        relevant_data = await self.qdrant_client.search(user_query)
+        
+        # RAG-based response generation
+        response = await self.llm_model.generate(
+            query=user_query,
+            context=relevant_data
+        )
+        
+        return response
+```
 
-Social Features: Add friends, send messages, and collaborate on shared expenses.
-AI Insights: View AI-generated financial stories on the StoryPage (currently a static placeholder, pending AI integration).
+**AI Features in Development:**
+- 🧠 Natural Language Processing for financial queries
+- 📊 Intelligent data summarization and insights
+- 🎯 Personalized recommendation engine
+- 🔍 Semantic search across financial data
+- 🤖 Conversational interface for all app features
 
-API Endpoints
-The backend provides RESTful API endpoints for various features. Below is a summary of key endpoints:
+## 📁 Project Structure
 
+<details>
+<summary>🖱️ Click to expand project structure</summary>
 
+```
+logup/
+├── 📁 backend/
+│   ├── 📄 main.py
+│   ├── 📄 requirements.txt
+│   ├── 📁 app/
+│   │   ├── 📁 api/          # API endpoints
+│   │   ├── 📁 db/           # Database models & schemas
+│   │   ├── 📁 services/     # Business logic
+│   │   └── 📁 middleware/   # Custom middleware
+│   └── 📁 tests/           # Test suites
+├── 📁 frontend/
+│   ├── 📁 src/
+│   │   ├── 📄 App.tsx
+│   │   ├── 📁 pages/        # React pages
+│   │   ├── 📁 components/   # Reusable components
+│   │   └── 📁 contexts/     # State management
+│   ├── 📄 package.json
+│   └── 📄 vite.config.ts
+└── 📄 README.md
+```
+</details>
 
-Endpoint
-Method
-Description
+## 📚 API Documentation
 
+Once the server is running, access the interactive API documentation:
+- **Swagger UI**: `http://localhost:8000/docs`
+- **ReDoc**: `http://localhost:8000/redoc`
 
+### Key Endpoints
+```
+🔐 Authentication
+POST   /auth/login           # User login
+POST   /auth/register        # User registration
+POST   /auth/refresh         # Token refresh
 
-/auth/signup
-POST
-Register a new user
+💰 Transactions
+GET    /transactions         # List transactions
+POST   /transactions         # Create transaction
+PUT    /transactions/{id}    # Update transaction
+DELETE /transactions/{id}    # Delete transaction
 
+🤖 AI Chat
+POST   /chat/query           # Process natural language query
+GET    /chat/history         # Chat history
+POST   /chat/insights        # Generate insights
+```
 
-/auth/login
-POST
-Authenticate a user
+## 🧪 Testing
 
+### Backend Tests
+```bash
+# Run all tests
+pytest
 
-/transactions/
-GET/POST/PUT/DELETE
-Manage user transactions
+# Run with coverage
+pytest --cov=app
 
+# Run specific test file
+pytest tests/test_transactions.py -v
+```
 
-/budgets/
-GET/POST/PUT/DELETE
-Manage budgets
+### Frontend Tests
+```bash
+# Run component tests
+npm test
 
+# Run e2e tests
+npm run test:e2e
+```
 
-/debts/
-GET/POST/PUT/DELETE
-Manage debts
+## 🗺️ Roadmap
 
+### Phase 1: Foundation (Completed ✅)
+- [x] Core backend API development
+- [x] React frontend implementation
+- [x] Basic CRUD operations
+- [x] Authentication system
 
-/split_expenses/
-GET/POST/PUT/DELETE
-Manage split expenses
+### Phase 2: Testing & Stability (In Progress 🔄)
+- [x] Comprehensive backend testing
+- [ ] Frontend component testing
+- [ ] Integration testing
+- [ ] Performance optimization
 
+### Phase 3: AI Integration (Next 🎯)
+- [ ] Qdrant vector database setup
+- [ ] RAG model implementation
+- [ ] Chatbot interface
+- [ ] Smart categorization
+- [ ] Personalized insights
 
-/subscriptions/
-GET/POST/PUT/DELETE
-Manage subscriptions
+### Phase 4: Advanced Features (Future 🚀)
+- [ ] Mobile applications (iOS/Android)
+- [ ] Multi-currency support
+- [ ] Advanced analytics dashboard
+- [ ] API rate limiting
+- [ ] Real-time notifications
 
+## 🤝 Contributing
 
-/goals/
-GET/POST/PUT/DELETE
-Manage financial goals
+As the primary developer, I welcome contributions that align with the project's vision. Here's how you can contribute:
 
+### Development Process
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-/savings/
-GET/POST/PUT/DELETE
-Manage savings
+### Contribution Guidelines
+- Follow existing code style and conventions
+- Write comprehensive tests for new features
+- Update documentation for API changes
+- Ensure all tests pass before submitting PR
 
+### Areas for Contribution
+- 🐛 Bug fixes and improvements
+- 📚 Documentation enhancements
+- 🧪 Test coverage expansion
+- 🎨 UI/UX improvements
+- 🔧 Performance optimizations
 
-/friends/
-GET/POST/PUT/DELETE
-Manage friends
+## 📈 Development Stats
 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yourusername/logup)
+![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/logup)
+![GitHub issues](https://img.shields.io/github/issues/yourusername/logup)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/logup)
 
-/messages/
-GET/POST/DELETE
-Manage messages
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-/notifications/
-GET/POST/PUT/DELETE
-Manage notifications
+## 📞 Contact & Support
 
+**Developer**: Afnan Ahmed
+**Email**: afnan006cs@gmail.com  
+**LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/afnan006)  
 
-/analytics/summary
-GET
-Fetch financial summary
+---
 
+<div align="center">
 
-/chat/message
-POST
-Send AI chat messages (placeholder)
+**⭐ Star this repo if you find it helpful!**
 
+Made with ❤️ and lots of ☕
 
-/receipts/upload
-POST
-Upload receipts (placeholder)
-
-
-/sms/send
-POST
-Send SMS (placeholder)
-
-
-For detailed API documentation, refer to the auto-generated OpenAPI docs at http://localhost:8000/docs.
-Current Development Focus
-Backend Testing
-We are actively working on comprehensive unit and integration tests for the backend to ensure reliability and robustness. The tests/ directory contains test files for each API module, covering authentication, transactions, budgets, debts, and more. The focus is on achieving high test coverage and validating edge cases.
-AI Integration
-The next phase of development involves enhancing LogUp with AI-driven features, including:
-
-Centralized Chatbot: Integrating a chatbot powered by a vector database (Qdrant) and large language models (LLMs) to centralize manual features. Users will be able to manage transactions, budgets, debts, and splits through natural language commands.
-Retrieval-Augmented Generation (RAG): Implementing RAG to provide context-aware financial insights and recommendations based on user data.
-Financial Story Generation: Enhancing the StoryPage with dynamic, AI-generated narratives about spending patterns, savings opportunities, and financial predictions.
-
-Future Enhancements
-
-Receipt OCR: Integrate optical character recognition for automatic expense extraction from uploaded receipts.
-SMS Notifications: Implement Twilio integration for real-time SMS alerts.
-Advanced Analytics: Develop detailed financial analytics with visualizations and predictive models.
-Mobile App: Extend LogUp to native iOS and Android applications.
-Multi-Currency Support: Enable tracking of expenses in multiple currencies.
-Group Budgeting: Allow collaborative budgeting for shared households or teams.
-
-Contributing
-Contributions are welcome! To contribute:
-
-Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Make your changes and commit (git commit -m "Add your feature").
-Push to the branch (git push origin feature/your-feature).
-Open a Pull Request with a detailed description of your changes.
-
-Please ensure code adheres to the project's linting and formatting standards (ESLint for frontend, Black for backend).
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Contact
-For questions or feedback, please reach out via GitHub Issues or contact the maintainer at [your-email@example.com].
+</div>
