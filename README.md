@@ -122,7 +122,7 @@ graph TB
 ### Backend Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/logup.git
+git clone https://github.com/afnan006/LogUp-.git
 cd logup/backend
 
 # Create virtual environment
