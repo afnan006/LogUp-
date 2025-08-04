@@ -3,7 +3,7 @@ Intelligent Financial Management Platform
 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/8ce5d2fa-e4a1-453b-9f92-df0d5fb8684d" alt="LogUp Banner" width="800"/>
+![LogUp Banner](https://github.com/user-attachments/assets/8ce5d2fa-e4a1-453b-9f92-df0d5fb8684d)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
