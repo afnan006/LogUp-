@@ -6,7 +6,7 @@ from app.db.database import get_db
 from sqlalchemy.orm import Session
 from app.db.models.user import User
 from app.db.schemas.user import UserCreate
-from main import app  # Import app for TestClient
+from main import app
 
 @pytest_asyncio.fixture
 async def client():
@@ -20,12 +20,24 @@ async def db_session():
     finally:
         db.close()
 
+@pytest_asyncio.fixture
+async def test_user(db_session: Session):
+    user = db_session.query(User).filter(User.email == "test@example.com").first()
+    if not user:
+        user = User(
+            username="testuser",
+            email="test@example.com",
+            password_hash="$2b$12$wHbQTgJT92Cnbzbp5/W3n.ud.JLZClxFPZIXuEsyWmGrBVX62pl6W",
+            phone_number="1234567890"
+        )
+        db_session.add(user)
+        db_session.commit()
+    return user
+
 @pytest.mark.asyncio
 async def test_signup_success(client: TestClient, db_session: Session):
-    # Clean up existing user
     db_session.query(User).filter(User.email == "newuser@example.com").delete()
     db_session.commit()
-    
     user_data = {
         "username": "newuser",
         "email": "newuser@example.com",
